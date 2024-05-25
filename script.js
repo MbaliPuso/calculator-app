@@ -76,3 +76,10 @@ function updateScreen() {
     const screen = document.getElementById('output-screen');
     screen.value = currentNumber;
 }
+
+function reset() {
+    currentNumber = ''; // Clear the current number
+    previousNumber = ''; // Clear the previous number
+    operator = ''; // Clear the operator
+    updateScreen(); 
+}
