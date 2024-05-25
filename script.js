@@ -83,3 +83,9 @@ function reset() {
     operator = ''; // Clear the operator
     updateScreen(); 
 }
+
+function percentage() {
+    if (currentNumber === '') return;
+    currentNumber = (parseFloat(currentNumber) / 100).toString(); // Convert to percentage formula
+    updateScreen();
+}
