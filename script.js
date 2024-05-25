@@ -55,6 +55,23 @@ function calculate() {
     updateScreen();
 }
 
+function selectOperation(op) {
+    if (currentNumber === '') return; // Do nothing if current number is emoty
+    if (previousNumber !== '') {
+        calculate();
+    }
+
+    operator = op; // Set the operator to the selected operation
+    previousNumber = currentNumber; // Store the current number as the previous number
+    currentNumber = '';
+}
+
+function changeNumber(number) {
+    if (number === '.' && currentNumber.includes('.')) return; // Prevents decimal points
+    currentNumber += number.toString(); // Rounding off
+    updateScreen(); // Update the display
+}
+
 function updateScreen() {
     const screen = document.getElementById('output-screen');
     screen.value = currentNumber;
