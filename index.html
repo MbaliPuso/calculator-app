@@ -7,26 +7,26 @@
 </head>
 <body>
     <div class="container">
-        <input type="text" name="" id="output-screen" placeholder="0">
+        <input type="text" id="output-screen" placeholder="0">
         <button onclick="reset()" class="reset">C</button>
-        <button>+/-</button>
-        <button>%</button>
-        <button>/</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>x</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>-</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>+</button>
-        <button>0</button>
-        <button>.</button>
-        <button>=</button>
+        <button onclick="negate()">+/-</button>
+        <button onclick="percentage()">%</button>
+        <button onclick="selectOperation('/')">/</button>
+        <button onclick="changeNumber(7)">7</button>
+        <button onclick="changeNumber(8)">8</button>
+        <button onclick="changeNumber(9)">9</button>
+        <button onclick="selectOperation('*')">x</button>
+        <button onclick="changeNumber(4)">4</button>
+        <button onclick="changeNumber(5)">5</button>
+        <button onclick="changeNumber(6)">6</button>
+        <button onclick="selectOperation('-')">-</button>
+        <button onclick="changeNumber(1)">1</button>
+        <button onclick="changeNumber(2)">2</button>
+        <button onclick="changeNumber(3)">3</button>
+        <button onclick="selectOperation('+')">+</button>
+        <button onclick="changeNumber(0)">0</button>
+        <button onclick="changeNumber('.')">.</button>
+        <button onclick="calculate()">=</button>
     </div>
     <script src="script.js"></script>
 </body>
