@@ -1,6 +1,6 @@
-const currentNumber = ''; // Variable to store the current number being entered
-const previousNumber = ''; // Variable to store the previous number entered
-const operator = ''; // variable to store the selected operation
+let currentNumber = '';  // Variable to store the current number being entered
+let previousNumber = ''; // Variable to store the previous number entered
+let operator = ''; // variable to store the selected operation
 
 // Function to add numbers
 function add(a, b) {
@@ -28,7 +28,6 @@ function divide(a, b) {
 
 // Function to perform the calculation
 function calculate() {
-    let result;
     const prev = parseFloat(previousNumber); // Convert previous number to float
     const current = parseFloat(currentNumber);
     if (isNaN(prev) || isNaN(current)) return; // Do nothing if either number is NaN
@@ -48,15 +47,14 @@ function calculate() {
         default:
             return; // Do nothing if no valid operator
     }
-    currentNumber = result;
+    currentNumber = result.toString();;
     operator = ''; // Clear the operator
     previousNumber = '';
-    operator = '';
     updateScreen();
 }
 
 function selectOperation(op) {
-    if (currentNumber === '') return; // Do nothing if current number is emoty
+    if (currentNumber === '') return; // Do nothing if current number is empty
     if (previousNumber !== '') {
         calculate();
     }
@@ -67,7 +65,7 @@ function selectOperation(op) {
 }
 
 function changeNumber(number) {
-    if (number === '.' && currentNumber.includes('.')) return; // Prevents decimal points
+    if (number === '.' && currentNumber.includes('.')) return; // Removes decimal points
     currentNumber += number.toString(); // Rounding off
     updateScreen(); // Update the display
 }
@@ -88,4 +86,10 @@ function percentage() {
     if (currentNumber === '') return;
     currentNumber = (parseFloat(currentNumber) / 100).toString(); // Convert to percentage formula
     updateScreen();
+}
+
+function negate() {
+    if (currentNumber === '') return; // Do nothing if current number is empty
+    currentNumber = (parseFloat(currentNumber) * -1).toString(); // Negate the current number
+    updateScreen(); // Update the display
 }
